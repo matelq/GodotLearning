@@ -1,0 +1,18 @@
+<Project Sdk="Godot.NET.Sdk/4.6.0">
+  <PropertyGroup>
+    <!-- TargetFramework = net10.0 inherited from Directory.Build.props -->
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <!-- Godot.NET.Sdk generates its own AssemblyInfo in .godot/mono/temp/obj/.
+         Suppress the standard SDK's duplicate generation to avoid CS0579. -->
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+  </PropertyGroup>
+
+  <!-- Exclude nested project directories from this project's source glob.
+       Without this, the default **/*.cs includes src/ and tests/ source files
+       AND their generated obj/ artifacts, causing compilation errors. -->
+  <ItemGroup>
+    <Compile Remove="src/**" />
+    <Compile Remove="tests/**" />
+  </ItemGroup>
+</Project>

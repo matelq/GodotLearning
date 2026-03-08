@@ -1,0 +1,60 @@
+<Project>
+  <PropertyGroup>
+    <SolutionDir>$(MSBuildThisFileDirectory)</SolutionDir>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>
+      CS0612;  <!-- 'member' is obsolete (without message) — Godot's generated interop code -->
+      CS0618;  <!-- 'member' is obsolete: 'text'           — Godot's generated interop code -->
+      CS8618;  <!-- Non-nullable field uninitialized       — Godot late-init pattern (_Ready() assigns refs) -->
+    </NoWarn>
+    <!--
+      NOTE: After first build, verify which warnings Godot.NET.Sdk emits and
+      add any additional codes here with explanatory comments.
+      Do not suppress without a comment explaining why.
+    -->
+  </PropertyGroup>
+
+  <!-- Centralized target framework — inherited by ALL projects including Godot.
+       FirstProject.csproj must NOT define <TargetFramework> so it inherits this value.
+       Godot.NET.Sdk 4.6.0 supports net10.0. -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(IsTestProject)' == ''">
+    <IsTestProject>$(MSBuildProjectName.Contains(`Tests`))</IsTestProject>
+  </PropertyGroup>
+
+  <!-- NOTE: Test projects must NOT reference FirstProject.csproj (the Godot project) via
+       ProjectReference. Godot.NET.Sdk's ScriptPathAttributeGenerator requires GodotProjectDir
+       and fails transitively in test projects. Tests should reference src/ library projects only. -->
+
+  <!-- JetBrains.Annotations: dev-only dependency (PrivateAssets=All = no runtime cost, not in output).
+       Key use in Godot: [UsedImplicitly] on _Ready(), _Process(), _PhysicsProcess() and other
+       engine-invoked callbacks — suppresses Rider's "method is never called" inspection warnings. -->
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <!-- Test project dependencies: auto-injected when project name contains "Tests".
+       Mirrors the WebServiceTemplate setup. -->
+  <ItemGroup Condition="'$(IsTestProject)' == 'true'">
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit.v3" />
+    <PackageReference Include="xunit.runner.visualstudio">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Moq" />
+    <PackageReference Include="Shouldly" />
+    <PackageReference Include="AutoFixture.AutoMoq" />
+  </ItemGroup>
+</Project>

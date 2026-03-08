@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:glama.ai)",
+      "WebFetch(domain:gdaimcp.com)",
+      "Bash(rm FirstProject.sln)",
+      "Bash(dotnet new sln --name FirstProject --format slnx)",
+      "Bash(dotnet sln FirstProject.slnx add FirstProject.csproj)",
+      "Bash(dotnet sln FirstProject.slnx add tests/FirstProject.Tests/FirstProject.Tests.csproj)",
+      "Bash(mkdir -p scripts scenes assets/textures assets/models assets/audio ui addons)",
+      "Bash(mv Node3d.cs scripts/Node3d.cs)",
+      "Bash(mv Node3d.cs.uid scripts/Node3d.cs.uid)",
+      "Bash(dotnet build FirstProject.slnx)",
+      "Bash(dotnet clean FirstProject.slnx)",
+      "Bash(rm -rf \".godot/mono/temp/obj\")",
+      "Bash(dotnet build tests/FirstProject.Tests/FirstProject.Tests.csproj -v normal)",
+      "Bash(dotnet build tests/FirstProject.Tests/FirstProject.Tests.csproj)",
+      "Bash(dotnet test FirstProject.slnx)",
+      "Bash(uvx serena --help)",
+      "Bash(npx @nuskey8/godot-docs-mcp@latest --help)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:oraios.github.io)",
+      "Bash(uvx --from git+https://github.com/oraios/serena serena start-mcp-server --help)"
+    ]
+  }
+}

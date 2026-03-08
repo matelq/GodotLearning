@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    TargetFramework:  inherited from Directory.Build.props (net10.0)
+    IsTestProject:    auto-detected from project name containing "Tests" in Directory.Build.props
+    Test packages:    xunit.v3, Moq, Shouldly, AutoFixture — injected by Directory.Build.props
+
+    This project tests ONLY pure C# logic from src/ library projects.
+    Do NOT add a ProjectReference to FirstProject.csproj (the Godot project):
+    Godot.NET.Sdk source generators require GodotProjectDir and break transitively.
+
+    When you add a src/ module (e.g. src/FirstProject.Core), reference it here:
+      <ItemGroup>
+        <ProjectReference Include="..\..\src\FirstProject.Core\FirstProject.Core.csproj" />
+      </ItemGroup>
+  -->
+</Project>

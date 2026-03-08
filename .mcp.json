@@ -1,0 +1,39 @@
+{
+  "mcpServers": {
+    "serena": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena",
+        "start-mcp-server",
+        "--context",
+        "claude-code",
+        "--project",
+        "c:\\Users\\user\\GodotProjects\\LearningGameDev\\first-project"
+      ]
+    },
+    "godot-editor": {
+      "command": "node",
+      "args": [
+        "C:\\Users\\user\\AppData\\Local\\mcp-servers\\godot-mcp\\build\\index.js"
+      ],
+      "env": {
+        "GODOT_PATH": "C:\\Users\\user\\Desktop\\Godot_v4.6-stable_mono_win64\\Godot_v4.6-stable_mono_win64.exe"
+      }
+    },
+    "godot-runtime": {
+      "command": "node",
+      "args": [
+        "C:\\Users\\user\\AppData\\Local\\mcp-servers\\godot-mcp-runtime\\dist\\index.js"
+      ],
+      "env": {
+        "GODOT_PATH": "C:\\Users\\user\\Desktop\\Godot_v4.6-stable_mono_win64\\Godot_v4.6-stable_mono_win64.exe"
+      }
+    },
+    "godot-docs": {
+      "type": "http",
+      "url": "https://godot-docs-mcp.j2d.workers.dev/mcp"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<Project>
+  <PropertyGroup>
+    <!--
+      Centralized Package Management (CPM).
+      All PackageReference entries across the solution must omit Version — versions are declared here.
+      See: https://docs.microsoft.com/en-us/nuget/consume-packages/central-package-management
+    -->
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <!-- Allow explicit version overrides in individual project files when needed -->
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+    <EnablePackageVersionOverride>true</EnablePackageVersionOverride>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Analysis & IDE support -->
+    <PackageVersion Include="JetBrains.Annotations" Version="2025.2.4" />
+    <PackageVersion Include="Microsoft.CodeAnalysis" Version="5.0.0" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.Analyzers" Version="3.11.0" />
+
+    <!-- Test infrastructure -->
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
+    <PackageVersion Include="xunit.v3" Version="3.2.2" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
+    <PackageVersion Include="coverlet.collector" Version="8.0.0" />
+
+    <!-- Test utilities — mirrors WebServiceTemplate -->
+    <PackageVersion Include="Moq" Version="4.20.72" />
+    <PackageVersion Include="Shouldly" Version="4.3.0" />
+    <PackageVersion Include="AutoFixture" Version="4.18.1" />
+    <PackageVersion Include="AutoFixture.AutoMoq" Version="4.18.1" />
+  </ItemGroup>
+
+  <!--
+    NOTE: Godot.NET.Sdk and GodotSharp packages are managed by the Godot SDK itself.
+    Do NOT add Godot SDK packages here — they will conflict with the Godot build system.
+  -->
+</Project>

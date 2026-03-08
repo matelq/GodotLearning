@@ -1,0 +1,44 @@
+# All text files use CRLF (Windows-style line endings)
+* text eol=crlf
+
+# Shell scripts use LF (Unix-style)
+*.sh text eol=lf
+
+# Godot binary assets — must not have line ending normalization applied
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.bmp binary
+*.tga binary
+*.svg text eol=lf
+
+# 3D model formats
+*.glb binary
+*.gltf text
+*.fbx binary
+*.obj text
+*.mtl text
+
+# Audio
+*.wav binary
+*.ogg binary
+*.mp3 binary
+*.flac binary
+
+# Fonts
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+
+# Compiled output
+*.dll binary
+*.exe binary
+*.pdb binary
+
+# Godot text formats — normalize as text
+*.import text eol=crlf
+*.tres text eol=crlf
+*.tscn text eol=crlf
+*.gdshader text eol=crlf
