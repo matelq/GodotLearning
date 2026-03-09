@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://customer_scene"]
+
+[ext_resource type="Script" path="res://scripts/Customer.cs" id="1_customer"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_customer"]
+radius = 0.3
+height = 1.6
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_customer"]
+radius = 0.3
+height = 1.6
+
+[sub_resource type="StandardMaterial3D" id="Material_customer"]
+albedo_color = Color(0.9, 0.6, 0.2, 1)
+
+[node name="Customer" type="CharacterBody3D"]
+script = ExtResource("1_customer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CapsuleShape3D_customer")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+mesh = SubResource("CapsuleMesh_customer")
+surface_material_override/0 = SubResource("Material_customer")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0, 0)
+text = "..."
+font_size = 32
+billboard = 1

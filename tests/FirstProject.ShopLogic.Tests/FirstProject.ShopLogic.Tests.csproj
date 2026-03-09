@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- TargetFramework, test packages inherited from Directory.Build.props -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\FirstProject.ShopLogic\FirstProject.ShopLogic.csproj" />
+  </ItemGroup>
+</Project>

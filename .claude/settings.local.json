@@ -22,7 +22,27 @@
       "Bash(npx @nuskey8/godot-docs-mcp@latest --help)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:oraios.github.io)",
-      "Bash(uvx --from git+https://github.com/oraios/serena serena start-mcp-server --help)"
+      "Bash(uvx --from git+https://github.com/oraios/serena serena start-mcp-server --help)",
+      "mcp__serena__list_dir",
+      "mcp__godot-docs__get_docs_page_for_term",
+      "Bash(dotnet sln FirstProject.slnx add src/FirstProject.ShopLogic/FirstProject.ShopLogic.csproj)",
+      "Bash(dotnet sln FirstProject.slnx add tests/FirstProject.ShopLogic.Tests/FirstProject.ShopLogic.Tests.csproj)",
+      "Bash(dotnet build src/FirstProject.ShopLogic/FirstProject.ShopLogic.csproj)",
+      "Bash(dotnet test tests/FirstProject.ShopLogic.Tests/FirstProject.ShopLogic.Tests.csproj)",
+      "Bash(dotnet restore tests/FirstProject.ShopLogic.Tests/FirstProject.ShopLogic.Tests.csproj)",
+      "Bash(dotnet build FirstProject.csproj)",
+      "mcp__godot-editor__run_project",
+      "mcp__godot-editor__get_debug_output",
+      "mcp__godot-runtime__take_screenshot",
+      "mcp__godot-editor__stop_project",
+      "mcp__godot-runtime__run_project",
+      "mcp__godot-runtime__get_debug_output",
+      "mcp__godot-runtime__stop_project",
+      "mcp__godot-runtime__simulate_input",
+      "Bash(dotnet build)",
+      "mcp__godot-runtime__run_script",
+      "WebFetch(domain:www.humanlayer.dev)",
+      "Bash(wc -l c:/Users/user/GodotProjects/LearningGameDev/first-project/CLAUDE.md c:/Users/user/GodotProjects/LearningGameDev/first-project/docs/*.md)"
     ]
   }
 }

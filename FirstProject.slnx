@@ -1,5 +1,9 @@
 <Solution>
+  <Folder Name="/src/">
+    <Project Path="src/FirstProject.ShopLogic/FirstProject.ShopLogic.csproj" />
+  </Folder>
   <Folder Name="/tests/">
+    <Project Path="tests/FirstProject.ShopLogic.Tests/FirstProject.ShopLogic.Tests.csproj" />
     <Project Path="tests/FirstProject.Tests/FirstProject.Tests.csproj" />
   </Folder>
   <Project Path="FirstProject.csproj" />

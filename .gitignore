@@ -374,3 +374,4 @@ FodyWeavers.xsd
 
 # Rider / JetBrains
 *.DotSettings.user
+.mcp/

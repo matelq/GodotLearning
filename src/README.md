@@ -7,9 +7,9 @@ This folder contains pure C# library projects (non-Godot) for complex subsystems
 Each module follows this structure:
 ```
 src/FirstProject.{Name}/
-    FirstProject.{Name}.csproj   ← Microsoft.NET.Sdk class library
+	FirstProject.{Name}.csproj   ← Microsoft.NET.Sdk class library
 tests/FirstProject.{Name}.Tests/
-    FirstProject.{Name}.Tests.csproj  ← xUnit v3 test project
+	FirstProject.{Name}.Tests.csproj  ← xUnit v3 test project
 ```
 
 ## Adding a new module
